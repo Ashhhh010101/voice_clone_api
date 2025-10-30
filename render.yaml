@@ -1,0 +1,10 @@
+services:
+  - type: web
+    name: voice-clone-api
+    env: python
+    runtime: python-3.10.14
+    plan: free
+    region: oregon  # or change to frankfurt if you're in EU
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn app:app --host 0.0.0.0 --port 10000
+    autoDeploy: true
